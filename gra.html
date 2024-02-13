@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .board {
+            border-collapse: collapse;
+            margin: auto;
+        }
+        .board td {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #ccc;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
+        <table class="board">
+            <tr>
+                <td onclick="place(this,0,0)"></td>
+                <td onclick="place(this,0,1)"></td>
+                <td onclick="place(this,0,2)"></td>
+            </tr>
+            <tr>
+                <td onclick="place(this,1,0)"></td>
+                <td onclick="place(this,1,1)"></td>
+                <td onclick="place(this,1,2)"></td>
+            </tr>
+            <tr>
+                <td onclick="place(this,2,0)"></td>
+                <td onclick="place(this,2,1)"></td>
+                <td onclick="place(this,2,2)"></td>
+            </tr>
+        </table>
+        <button onclick="reset()">Reset</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        let currentPlayer = 'X';
+        let gameEnded = false;
+        let board = [
+            ['', '', ''],
+            ['', '', ''],
+            ['', '', '']
+        ];
+
+        function place(cell, row, col) {
+            if (cell.textContent === '' && !gameEnded) {
+                cell.textContent = currentPlayer;
+                board[row][col] = currentPlayer;
+                if (checkWin(row, col)) {
+                    document.getElementById('result').textContent = currentPlayer + ' wins!';
+                    gameEnded = true;
+                } else if (checkDraw()) {
+                    document.getElementById('result').textContent = 'It\'s a draw!';
+                    gameEnded = true;
+                } else {
+                    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                }
+            }
+        }
+
+        function checkWin(row, col) {
+            return (board[row][0] === currentPlayer && board[row][1] === currentPlayer && board[row][2] === currentPlayer) ||
+                   (board[0][col] === currentPlayer && board[1][col] === currentPlayer && board[2][col] === currentPlayer) ||
+                   (board[0][0] === currentPlayer && board[1][1] === currentPlayer && board[2][2] === currentPlayer) ||
+                   (board[0][2] === currentPlayer && board[1][1] === currentPlayer && board[2][0] === currentPlayer);
+        }
+
+        function checkDraw() {
+            for (let row = 0; row < 3; row++) {
+                for (let col = 0; col < 3; col++) {
+                    if (board[row][col] === '') {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        function reset() {
+            currentPlayer = 'X';
+            gameEnded = false;
+            board = [
+                ['', '', ''],
+                ['', '', ''],
+                ['', '', '']
+            ];
+            document.getElementById('result').textContent = '';
+            document.querySelectorAll('.board td').forEach(cell => cell.textContent = '');
+        }
+    </script>
+</body>
+</html>
