@@ -8,13 +8,13 @@
   <body>
  <?php
 	    $conn=mysqli_connect('localhost', 'root','','salon');
-	    if (isset($_POST['imie'])&&isset($_POST['nazw'])&&isset{$_POST['data'])&&isset($_POST['zabieg']))
+	    if (isset($_POST['imie'])&&isset($_POST'nazw'])&&isset($_POST['data'])&&isset($_POST['zabieg']))
 	    {
-	    $imie=$_POST['Imie'];
+	    $imie=$_POST['imie'];
 	    $nazw=$_POST['nazw'];
 	    $data=$_POST['data'];
 	    $zabieg=$_POST['zabieg'];
-	    $q1=mysqli_query($conn,"SELECT IDklient FROM klient WHERE Imie='$imie' and Nazwisko='$nazw' ");
+	    $q1=mysqli_query($conn,"SELECT Idklient FROM klient WHERE Imie='$imie' and Nazwisko='$nazw' ");
 	    $r1=mysqli_fetch_array($q1);
 	    $d= $r1['Idklienta'];
 	    $q2=mysqli_query($conn, "SELECT max(Idklienta) as 'ile' FROM klient ");
