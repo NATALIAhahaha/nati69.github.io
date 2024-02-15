@@ -6,6 +6,48 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
+	<div id="kontener">
+  <div id="baner">
+  </div>
+  <div id="menu">
+    <ol id="przycisk">
+      <li><a href="index.html">strona glowna</a></li>
+      <li><a href="wizyty.php">wizyty</a></li>
+    </ol>
+  </div>
+  <div id="glowny">
+    <h2>zapisz sie na wizyte</h2>
+    <form action="" method="post">
+      <table>
+        <tr>
+
+        <td>imie:</td>
+          <td><input type="text" name="imie"></td>
+        </tr>
+        <tr>
+          <td>nazwisko:</td>
+          <td><input type="text" name="nazw"></td>
+        </tr>
+        <tr>
+          <td>wybierz date uslugi</td>
+          <td><input type="date" name="data"></td>
+        </tr>
+        <tr>
+          <td>wybierz usluge:</td>
+          <td><select name="zabieg">
+            <option values="2">manicure tradycyjny</option>
+            <option values="3">manicure tradycyjny</option>
+            <option values="4">manicure tradycyjny</option>
+            <option values="5">manicure tradycyjny</option>
+            <option values="1">manicure tradycyjny</option>
+            <option values="6">manicure tradycyjny</option>
+          </select>
+          </td>
+          
+        </tr>
+        <tr><td colspan="2"><input type="submit" id="przycisk2" value="zapisz wizyte"></td></tr>
+      </table>
+    </form>  
  <?php
 	    $conn=mysqli_connect('localhost', 'root','','salon');
 	    if (isset($_POST['imie'])&&isset($_POST'nazw'])&&isset($_POST['data'])&&isset($_POST['zabieg']))
