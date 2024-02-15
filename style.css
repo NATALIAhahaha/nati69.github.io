@@ -1,0 +1,83 @@
+body{
+background-color: #D7DBD1;
+  font-family: Verdana;
+}
+#kontener{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#baner{
+  height: 100px;
+  background-color: #99A89E;
+  font-size: 30px;
+  text-align: center;
+  padding: 15px;
+  color: white;
+}
+#menu{
+  width:40%;
+  height: 450px;
+  float:left;
+  background-color: #ECA4A6;
+}
+#glowny{
+  width: 57%;
+  height: 450px;
+  float:left;
+  background-color: #ECA4A6;
+  padding-left: 3%;
+}
+#przyciski li{
+  width:200px;
+  height:30px;
+  background-color: #F9D5D3;
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  list-style-type: none;
+  font-weight: bold;
+}
+#kwiat{
+  float:right;
+  width: 200px;
+  height: 200px;
+}
+a{
+  text-decoration: none;
+  color: #807F89;
+  font-size: 20px;
+}
+table{
+  background-color #F9D5D3;
+  margin: auto;
+  width: 60%;
+  height: 60%;
+  border-radius: 20px;
+}
+ul{
+  list-style-image: url(p.png);
+}
+#stopka{
+  clear: both;
+  background-color: #99A89E;
+  padding: 20 px 30 px;
+  text align: right;
+}
+#baner img{
+  vertical-align: middle;
+  height: 100px;
+}
+#przycisk2{
+  width: 200px;
+  height: 40px;
+  background-color: #99A89E;
+  text-align: center;
+  border-radius: 20px;
+  float: right;
+}
+h4{
+  color: darkred;
+  text-align: center;
+}
